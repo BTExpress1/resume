@@ -21,10 +21,11 @@ jobs:
 
       - name: Push changes
         env:
-            TOKEN: ${{ secrets.GH_PAT }}        
+            TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add TPM-AI-Compliance/resume.pdf Staff-Data-Scientist/resume.pdf
-          git diff --cached --quiet || git commit -m "Rebuilt PDFs from existing Markdown"
-          git push
+            git config user.name "Bini Teklehaimanot"
+            git config user.email "padgenb@gmail.com"
+            git remote set-url origin https://x-access-token:${TOKEN}@github.com/BTExpress1/resume.git
+            git add TPM-AI-Compliance/resume.pdf Staff-Data-Scientist/resume.pdf
+            git diff --cached --quiet || git commit -m "Rebuilt PDFs from existing Markdown"
+            git push
