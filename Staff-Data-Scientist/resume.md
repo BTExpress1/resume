@@ -49,7 +49,7 @@ Staff-level Data Scientist with a systems architecture background and 10+ years 
 - Certified Data Privacy Solutions Engineer (CDPSE)  
 - Certification in Risk and Information Systems Control (CRISC)  
 - Data Science and Machine Learning Certificate (Harvard)  
-- Certification in Change Management (Procsci)
+- Certification in Change Management (Prosci)
 
 **Professional Memberships**  
 - Information Systems Audit and Control Association (ISACA)  
