@@ -4,10 +4,6 @@ echo "🛠️ Assembling TPM in AI/Compliance resume..."
 {
   cat shared/header.md
   echo
-  echo "## Summary"
-  echo
-  cat TPM-AI-Compliance/modules/summary-tpm.md
-  echo
   echo "## Skills"
   echo
   cat TPM-AI-Compliance/modules/skills-tpm.md
@@ -34,10 +30,6 @@ echo "✅ TPM resume assembled at TPM-AI-Compliance/resume.md"
 echo "🧪 Assembling Staff Data Scientist resume..."
 {
   cat shared/header.md
-  echo
-  echo "## Summary"
-  echo
-  cat Staff-Data-Scientist/modules/summary-data-science.md
   echo
   echo "## Skills"
   echo
