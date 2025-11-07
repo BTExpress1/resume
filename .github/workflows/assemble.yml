@@ -27,6 +27,9 @@ jobs:
 
       - name: Run assembly script
         run: ./assemble.sh
+        
+      - name: Run no-summary assembly script
+        run: ./assemble-no-summary.sh
 
       - name: Convert TPM resume to PDF
         run: pandoc TPM-AI-Compliance/resume.md -o TPM-AI-Compliance/resume.pdf
