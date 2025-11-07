@@ -23,9 +23,9 @@ echo "🛠️ Assembling TPM in AI/Compliance resume..."
   echo "## Certifications"
   echo
   cat shared/certifications.md
-} > TPM-AI-Compliance/resume.md
+} > TPM-AI-Compliance/resume-no-summary.md
 
-echo "✅ TPM resume assembled at TPM-AI-Compliance/resume.md"
+echo "✅ TPM resume assembled at TPM-AI-Compliance/resume-no-summary.md"
 
 echo "🧪 Assembling Staff Data Scientist resume..."
 {
@@ -50,6 +50,6 @@ echo "🧪 Assembling Staff Data Scientist resume..."
   echo "## Certifications"
   echo
   cat shared/certifications.md
-} > Staff-Data-Scientist/resume.md
+} > Staff-Data-Scientist/resume-no-summary.md
 
-echo "✅ Data Scientist resume assembled at Staff-Data-Scientist/resume.md"
+echo "✅ Data Scientist resume assembled at Staff-Data-Scientist/resume-no-summary.md"
