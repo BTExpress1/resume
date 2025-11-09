@@ -26,20 +26,19 @@ jobs:
         run: chmod +x assemble.sh
 
       - name: Run assembly script
-        run: ./assemble.sh
-        
-      - name: Make no-summary script executable
-        run: chmod +x assemble-no-summary.sh
-
-        
-      - name: Run no-summary assembly script
-        run: ./assemble-no-summary.sh
+        run: ./assemble.sh     
 
       - name: Convert TPM resume to PDF
         run: pandoc TPM-AI-Compliance/resume.md -o TPM-AI-Compliance/resume.pdf
 
       - name: Convert DS resume to PDF
         run: pandoc Staff-Data-Scientist/resume.md -o Staff-Data-Scientist/resume.pdf
+
+       - name: Make no-summary script executable
+        run: chmod +x assemble-no-summary.sh
+        
+      - name: Run no-summary assembly script
+        run: ./assemble-no-summary.sh
         
       - name: Convert TPM resume (no summary) to PDF
         run: pandoc TPM-AI-Compliance/resume-no-summary.md -o TPM-AI-Compliance/resume-no-summary.pdf
