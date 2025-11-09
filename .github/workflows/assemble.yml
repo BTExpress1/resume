@@ -28,6 +28,10 @@ jobs:
       - name: Run assembly script
         run: ./assemble.sh
         
+      - name: Make no-summary script executable
+        run: chmod +x assemble-no-summary.sh
+
+        
       - name: Run no-summary assembly script
         run: ./assemble-no-summary.sh
 
