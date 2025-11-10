@@ -188,6 +188,4 @@ jobs:
 
             # Commit and push
             git commit -m "Rebuilt resumes from updated Markdown inputs and convert them to PDFs"
-            git reset --hard
-            git pull --rebase origin main
             git push
