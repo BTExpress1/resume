@@ -45,8 +45,8 @@ jobs:
               exit 1
             fi
             echo "--------------------------------------"
-         - name: Debug and Verify Full Dice File Creation
-           run: |
+        - name: Debug and Verify Full Dice File Creation
+          run: |
             FILE="TPM-AI-Compliance/Dice/resume.md"
             echo "--- Verifying FULL Dice output file creation ---"
             # Changed to \$FILE for testing purposes
@@ -58,8 +58,8 @@ jobs:
               exit 1
             fi
             echo "--------------------------------------"
-         - name: Debug and Verify Full DS File Creation
-           run: |
+        - name: Debug and Verify Full DS File Creation
+          run: |
             FILE="Staff-Data-Scientist/resume.md"
             echo "--- Verifying FULL DS output file creation ---"
             # Changed to \$FILE for testing purposes
@@ -71,13 +71,13 @@ jobs:
               exit 1
             fi
             echo "--------------------------------------"
-         - name: Convert TPM resume (Full) to PDF
-           run: pandoc TPM-AI-Compliance/resume.md -o TPM-AI-Compliance/resume.pdf
-         - name: Convert TPM Dice resume (Full) to PDF
-           run: pandoc TPM-AI-Compliance/Dice/resume.md -o TPM-AI-Compliance/Dice/resume.pdf
+        - name: Convert TPM resume (Full) to PDF
+          run: pandoc TPM-AI-Compliance/resume.md -o TPM-AI-Compliance/resume.pdf
+        - name: Convert TPM Dice resume (Full) to PDF
+          run: pandoc TPM-AI-Compliance/Dice/resume.md -o TPM-AI-Compliance/Dice/resume.pdf
 
-          - name: Convert DS resume (Full) to PDF
-            run: pandoc Staff-Data-Scientist/resume.md -o Staff-Data-Scientist/resume.pdf
+        - name: Convert DS resume (Full) to PDF
+          run: pandoc Staff-Data-Scientist/resume.md -o Staff-Data-Scientist/resume.pdf
 
           # --- NO-SUMMARY ASSEMBLY (assemble-no-summary.sh) ---
 
