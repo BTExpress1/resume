@@ -1,14 +1,13 @@
 name: Assemble Modular Resumes
 
 on:
-    workflow_dispatch:  # Manual trigger
+  workflow_dispatch:  # Manual trigger
 
 jobs:
-    build-resumes:
-        runs-on: ubuntu-latest
+  build-resumes:
+    runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout repo
         uses: actions/checkout@v3
 
