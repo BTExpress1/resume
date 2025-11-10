@@ -179,7 +179,14 @@ jobs:
             git config user.name "Bini Teklehaimanot"
             git config user.email "padgenb@gmail.com"
             git add input.checksum TPM-AI-Compliance/resume.pdf TPM-AI-Compliance/resume-no-summary.pdf TPM-AI-Compliance/Dice/resume.pdf TPM-AI-Compliance/Dice/resume-no-summary.pdf Staff-Data-Scientist/resume.pdf Staff-Data-Scientist/resume-no-summary.pdf
-            git diff --cached --quiet || git commit -m "Rebuilt resumes from updated Markdown inputs and convert them to PDFs"
-            git diff --quiet && echo "✅ No changes to commit or push." && exit 0
-            git pull --rebase origin main
-            git push
+            
+            # Check if anything is staged
+            if git diff --cached --quiet; then
+              echo "✅ No changes staged — skipping commit and push."
+            exit 0
+          fi
+
+          # Commit and push
+          git commit -m "Rebuilt resumes from updated Markdown inputs and convert them to PDFs"
+          git pull --rebase origin main
+          git push
