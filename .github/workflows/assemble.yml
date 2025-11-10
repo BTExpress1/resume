@@ -1,12 +1,12 @@
 name: Assemble Modular Resumes
 
-on:
-  workflow_dispatch:  # Manual trigger
+on: 
+    workflow_dispatch:  # Manual trigger
 
-jobs:
-  build-resumes:
-    runs-on: ubuntu-latest
-
+jobs: 
+    build-resumes: 
+        runs-on: ubuntu-latest
+        
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -95,11 +95,11 @@ jobs:
         run: |
           FILE="TPM-AI-Compliance/resume-no-summary.md"
           echo "--- Verifying NO-SUMMARY TPM output file creation ---"
-          if test -f "\$FILE"; then
-            echo "✅ SUCCESS: The file \$FILE WAS created by the script."
-            ls -l "\$FILE"
+          if test -f "$FILE"; then
+            echo "✅ SUCCESS: The file $FILE WAS created by the script."
+            ls -l "$FILE"
           else
-            echo "❌ ERROR: The file \$FILE WAS NOT found after the assembly script ran."
+            echo "❌ ERROR: The file $FILE WAS NOT found after the assembly script ran."
             echo "The assembly script likely failed silently or exited early. Check input file paths for case-sensitivity!"
             exit 1 # Fail the job here for clear visibility
           fi
@@ -109,11 +109,11 @@ jobs:
         run: |
           FILE="TPM-AI-Compliance/Dice/resume-no-summary.md"
           echo "--- Verifying NO-SUMMARY Dice output file creation ---"
-          if test -f "\$FILE"; then
-            echo "✅ SUCCESS: The file \$FILE WAS created by the script."
-            ls -l "\$FILE"
+          if test -f "$FILE"; then
+            echo "✅ SUCCESS: The file $FILE WAS created by the script."
+            ls -l "$FILE"
           else
-            echo "❌ ERROR: The file \$FILE WAS NOT found after the assembly script ran."
+            echo "❌ ERROR: The file $FILE WAS NOT found after the assembly script ran."
             echo "The assembly script likely failed silently or exited early. Check input file paths for case-sensitivity!"
             exit 1 # Fail the job here for clear visibility
           fi
@@ -123,11 +123,11 @@ jobs:
         run: |
           FILE="Staff-Data-Scientist/resume-no-summary.md"
           echo "--- Verifying NO-SUMMARY DS output file creation ---"
-          if test -f "\$FILE"; then
-            echo "✅ SUCCESS: The file \$FILE WAS created by the script."
-            ls -l "\$FILE"
+          if test -f "$FILE"; then
+            echo "✅ SUCCESS: The file $FILE WAS created by the script."
+            ls -l "$FILE"
           else
-            echo "❌ ERROR: The file \$FILE WAS NOT found after the assembly script ran."
+            echo "❌ ERROR: The file $FILE WAS NOT found after the assembly script ran."
             echo "The assembly script likely failed silently or exited early. Check input file paths for case-sensitivity!"
             exit 1 # Fail the job here for clear visibility
           fi
