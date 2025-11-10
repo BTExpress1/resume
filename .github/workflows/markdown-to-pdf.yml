@@ -32,6 +32,6 @@ jobs:
         run: |
             git config user.name "Bini Teklehaimanot"
             git config user.email "padgenb@gmail.com"            
-            git add TPM-AI-Compliance/resume.pdf TPM-AI-Compliance/resume-no-summary.pdf Staff-Data-Scientist/resume.pdf Staff-Data-Scientist/resume-no-summary.pdf
+            git add TPM-AI-Compliance/resume.pdf TPM-AI-Compliance/resume-no-summary.pdf Staff-Data-Scientist/resume.pdf Staff-Data-Scientist/resume-no-summary.pdf TPM-AI-Compliance/Dice/resume.pdf TPM-AI-Compliance/Dice/resume-no-summary.pdf
             git diff --cached --quiet || git commit -m "Rebuilt PDFs from existing Markdown"
             git push
