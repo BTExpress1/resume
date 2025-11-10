@@ -54,6 +54,7 @@ echo "🧪 Assembling Staff Data Scientist resume..."
 
 echo "✅ Data Scientist resume assembled at Staff-Data-Scientist/resume-no-summary.md"
 
+echo "🧪 Assembling TPM Dice no-summaryresume..."
 # Assemble TPM-AI-Compliance Dice variant without summary
 cat shared/header.md \
     TPM-AI-Compliance/Dice/modules/skills-dice.md \
