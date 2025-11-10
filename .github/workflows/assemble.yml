@@ -37,10 +37,10 @@ jobs:
           FILE="TPM-AI-Compliance/resume.md"
           echo "--- Verifying FULL TPM output file creation ---"
           if test -f "$FILE"; then
-            echo "✅ SUCCESS: The file \$FILE WAS created."
+            echo "✅ SUCCESS: The file $FILE WAS created."
             ls -l "$FILE"
           else
-            echo "❌ ERROR: The file \$FILE WAS NOT found."
+            echo "❌ ERROR: The file $FILE WAS NOT found."
             exit 1
           fi
           echo "--------------------------------------"
@@ -50,10 +50,10 @@ jobs:
           FILE="TPM-AI-Compliance/Dice/resume.md"
           echo "--- Verifying FULL Dice output file creation ---"
           if test -f "$FILE"; then
-            echo "✅ SUCCESS: The file \$FILE WAS created."
+            echo "✅ SUCCESS: The file $FILE WAS created."
             ls -l "$FILE"
           else
-            echo "❌ ERROR: The file \$FILE WAS NOT found."
+            echo "❌ ERROR: The file $FILE WAS NOT found."
             exit 1
           fi
           echo "--------------------------------------"
@@ -63,10 +63,10 @@ jobs:
           FILE="Staff-Data-Scientist/resume.md"
           echo "--- Verifying FULL DS output file creation ---"
           if test -f "$FILE"; then
-            echo "✅ SUCCESS: The file \$FILE WAS created."
+            echo "✅ SUCCESS: The file $FILE WAS created."
             ls -l "$FILE"
           else
-            echo "❌ ERROR: The file \$FILE WAS NOT found."
+            echo "❌ ERROR: The file $FILE WAS NOT found."
             exit 1
           fi
           echo "--------------------------------------"
