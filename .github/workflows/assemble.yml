@@ -183,8 +183,8 @@ jobs:
             # Check if anything is staged
             if git diff --cached --quiet; then
               echo "✅ No changes staged — skipping commit and push."
-            exit 0
-          fi
+              exit 0
+            fi
 
           # Commit and push
           git commit -m "Rebuilt resumes from updated Markdown inputs and convert them to PDFs"
