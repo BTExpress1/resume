@@ -40,12 +40,12 @@ jobs:
           run: |
             FILE="TPM-AI-Compliance/resume.md"
             echo "--- Verifying FULL TPM output file creation ---"
-            # Changed to \$FILE for testing purposes
-            if test -f "\$FILE"; then
-              echo "✅ SUCCESS: The file \$FILE WAS created."
-              ls -l "\$FILE"
+            # Changed to $FILE for testing purposes
+            if test -f "$FILE"; then
+              echo "✅ SUCCESS: The file $FILE WAS created."
+              ls -l "$FILE"
             else
-              echo "❌ ERROR: The file \$FILE WAS NOT found."
+              echo "❌ ERROR: The file $FILE WAS NOT found."
               exit 1
             fi
             echo "--------------------------------------"
