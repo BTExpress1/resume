@@ -28,7 +28,7 @@ jobs:
 
         - name: Check for input changes
           run: |
-            if git diff --quiet input.checksum; then
+            if git diff --quiet; then
               echo "✅ Inputs unchanged — skipping assembly and PDF generation."
               exit 0
             else
