@@ -31,6 +31,10 @@ jobs:
             echo "Starting full assembly: ./assemble.sh"
             ./assemble.sh
             echo "Full assembly script execution finished."
+        - name: List files after assembly
+          run: |
+            echo "--- Listing all .md files ---"
+            find . -name "*.md"
 
         - name: Debug and Verify Full TPM File Creation
           run: |
