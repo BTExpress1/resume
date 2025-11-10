@@ -1,9 +1,9 @@
-## Summary
-
 **Bini Teklehaimanot**  
 Kirkland, WA  
 Email: padgenb@gmail.com | Phone: (425) 310-5387  
 [LinkedIn](https://www.linkedin.com/in/binitek) | [GitHub](https://github.com/binitek)
+
+## Summary
 
 Staff-level Data Scientist with a systems architecture background and 10+ years of experience driving AI/ML readiness, experimentation infrastructure, and insight-to-decision frameworks across regulated industries. Proven ability to translate complex data into strategic action through SQL, Python, and Power BI, while aligning with compliance, privacy, and stakeholder needs. Skilled in building scalable analytics platforms, optimizing model deployment pipelines, and applying AI/ML to accelerate business outcomes in cloud, fintech, and healthtech environments.
 

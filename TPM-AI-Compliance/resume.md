@@ -1,9 +1,9 @@
-## Summary
-
 **Bini Teklehaimanot**  
 Kirkland, WA  
 Email: padgenb@gmail.com | Phone: (425) 310-5387  
 [LinkedIn](https://www.linkedin.com/in/binitek) | [GitHub](https://github.com/binitek)
+
+## Summary
 
 Strategic Program Manager with 10+ years leading compliance, data analytics, and AI/ML initiatives across regulated industries. Expert in extracting insights from complex datasets using SQL, Python, and AI tools to drive executive decision-making, optimize Third-Party Risk Management (TPRM), and streamline business conduct approvals. Proven success aligning engineering, legal, and risk stakeholders to deliver scalable compliance frameworks and AI-enabled governance programs. Recognized for transforming data into actionable strategy and accelerating program velocity through automation and cross-functional consensus.
 
