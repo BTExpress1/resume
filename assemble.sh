@@ -61,3 +61,17 @@ echo "🧪 Assembling Staff Data Scientist resume..."
 } > Staff-Data-Scientist/resume.md
 
 echo "✅ Data Scientist resume assembled at Staff-Data-Scientist/resume.md"
+
+# Assemble TPM-AI-Compliance Dice variant
+cat shared/header.md \
+    resume/TPM-AI-Compliance/Dice/modules/summary-dice.md \
+    resume/TPM-AI-Compliance/Dice/modules/skills-dice.md \
+    resume/TPM-AI-Compliance/Dice/modules/experience-dice.md \
+    shared/education.md \
+    shared/certifications.md \
+    > resume/TPM-AI-Compliance/Dice/resume.md
+	
+echo "✅ TPM Dice resume assembled at TPM-AI-Compliance/Dice/resume.md"
+
+
+

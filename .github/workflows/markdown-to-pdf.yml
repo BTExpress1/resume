@@ -25,6 +25,8 @@ jobs:
           pandoc Staff-Data-Scientist/resume.md -o Staff-Data-Scientist/resume.pdf
           pandoc TPM-AI-Compliance/resume-no-summary.md -o TPM-AI-Compliance/resume-no-summary.pdf
           pandoc Staff-Data-Scientist/resume-no-summary.md -o Staff-Data-Scientist/resume-no-summary.pdf
+          pandoc TPM-AI-Compliance/Dice/resume.md -o TPM-AI-Compliance/Dice/resume.pdf       
+          pandoc TPM-AI-Compliance/Dice/resume-no-summary.md -o TPM-AI-Compliance/Dice/resume-no-summary.pdf
 
       - name: Push changes
         run: |

@@ -63,6 +63,9 @@ jobs:
 
       - name: Convert DS resume (Full) to PDF
         run: pandoc Staff-Data-Scientist/resume.md -o Staff-Data-Scientist/resume.pdf
+        
+      - name: Convert TPM Dice resume (Full) to PDF
+        run: pandoc TPM-AI-Compliance/Dice/resume.md -o TPM-AI-Compliance/Dice/resume.pdf
 
       # --- NO-SUMMARY ASSEMBLY (assemble-no-summary.sh) ---
 
@@ -109,7 +112,9 @@ jobs:
 
       - name: Convert DS resume (no summary) to PDF
         run: pandoc Staff-Data-Scientist/resume-no-summary.md -o Staff-Data-Scientist/resume-no-summary.pdf
-
+       
+      - name: Convert TPM Dice resume (no summary) to PDF
+        run: pandoc TPM-AI-Compliance/Dice/resume-no-summary.md -o TPM-AI-Compliance/Dice/resume-no-summary.pdf
 
       - name: Push changes
         run: |
