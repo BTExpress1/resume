@@ -31,6 +31,10 @@ jobs:
             echo "Starting full assembly: ./assemble.sh"
             ./assemble.sh
             echo "Full assembly script execution finished."
+            echo "✅ All resume.md assembled"
+            echo "⏳ Pausing for 2 seconds to ensure file flush... $(date '+%Y-%m-%d %H:%M:%S')"
+            sleep 2
+
         - name: Confirm working directory and file presence
           run: |
             echo "Current working directory:"
@@ -99,7 +103,10 @@ jobs:
           run: |
             echo "Starting no-summary assembly script: ./assemble-no-summary.sh"
             ./assemble-no-summary.sh
-            echo "No-summary assembly script execution finished."
+            echo "No-summary assembly script execution finished."            
+            echo "✅ All resume-no-summary.md assembled"
+            echo "⏳ Pausing for 2 seconds to ensure file flush... $(date '+%Y-%m-%d %H:%M:%S')"
+            sleep 2
 
         - name: Debug and Verify No-Summary TPM File Creation
           run: |
