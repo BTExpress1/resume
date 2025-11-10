@@ -1,6 +1,5 @@
 #!/bin/bash
 
-Name: Assemble Script
 echo "🛠️ Assembling TPM in AI/Compliance resume..."
 {
   cat shared/header.md

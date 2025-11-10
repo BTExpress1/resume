@@ -1,5 +1,5 @@
 #!/bin/bash
-Name: Aseeble No Summary Script
+
 echo "🛠️ Assembling TPM in AI/Compliance resume..."
 {
   cat shared/header.md
