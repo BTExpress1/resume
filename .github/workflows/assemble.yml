@@ -7,146 +7,147 @@ jobs:
     build-resumes:
     runs-on: ubuntu-latest
 
-steps:
+    steps:
 
-    name: Checkout repo
-    uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-    name: Override remote with PAT
-    env:
-    TOKEN: ${{ secrets.GH_PAT }}
-    run: git remote set-url origin https://x-access-token:${TOKEN}@github.com/BTExpress1/resume.git
+      - name: Override remote with PAT
+        env:
+          TOKEN: ${{ secrets.GH_PAT }}
+        run: git remote set-url origin https://x-access-token:${TOKEN}@github.com/BTExpress1/resume.git
 
-    name: Install Pandoc and LaTeX
-    run: |
-    sudo apt-get update
-    sudo apt-get install -y pandoc texlive-xetex
+      - name: Install Pandoc and LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex
 
-    --- FULL ASSEMBLY (assemble.sh) ---
+      # --- FULL ASSEMBLY (assemble.sh) ---
 
-    name: Make script executable (Full)
-    run: chmod +x assemble.sh
+      - name: Make script executable (Full)
+        run: chmod +x assemble.sh
 
-    name: Run assembly script (Full)
-    run: |
-    echo "Starting full assembly: ./assemble.sh"
-    ./assemble.sh
-    echo "Full assembly script execution finished."
+      - name: Run assembly script (Full)
+        run: |
+          echo "Starting full assembly: ./assemble.sh"
+          ./assemble.sh
+          echo "Full assembly script execution finished."
 
-    name: Debug and Verify Full TPM File Creation
-    run: |
-    FILE="TPM-AI-Compliance/resume.md"
-    echo "--- Verifying FULL TPM output file creation ---"
-    if test -f "$FILE"; then
-    echo "✅ SUCCESS: The file $FILE WAS created."
-    ls -l "$FILE"
-    else
-    echo "❌ ERROR: The file $FILE WAS NOT found."
-    exit 1
-    fi
-    echo "--------------------------------------"
+      - name: Debug and Verify Full TPM File Creation
+        run: |
+          FILE="TPM-AI-Compliance/resume.md"
+          echo "--- Verifying FULL TPM output file creation ---"
+          if test -f "\$FILE"; then
+            echo "✅ SUCCESS: The file \$FILE WAS created."
+            ls -l "\$FILE"
+          else
+            echo "❌ ERROR: The file \$FILE WAS NOT found."
+            exit 1
+          fi
+          echo "--------------------------------------"
 
-    name: Debug and Verify Full Dice File Creation
-    run: |
-    FILE="TPM-AI-Compliance/Dice/resume.md"
-    echo "--- Verifying FULL Dice output file creation ---"
-    if test -f "$FILE"; then
-    echo "✅ SUCCESS: The file $FILE WAS created."
-    ls -l "$FILE"
-    else
-    echo "❌ ERROR: The file $FILE WAS NOT found."
-    exit 1
-    fi
-    echo "--------------------------------------"
+      - name: Debug and Verify Full Dice File Creation
+        run: |
+          FILE="TPM-AI-Compliance/Dice/resume.md"
+          echo "--- Verifying FULL Dice output file creation ---"
+          if test -f "\$FILE"; then
+            echo "✅ SUCCESS: The file \$FILE WAS created."
+            ls -l "\$FILE"
+          else
+            echo "❌ ERROR: The file \$FILE WAS NOT found."
+            exit 1
+          fi
+          echo "--------------------------------------"
 
-    name: Debug and Verify Full DS File Creation
-    run: |
-    FILE="Staff-Data-Scientist/resume.md"
-    echo "--- Verifying FULL DS output file creation ---"
-    if test -f "$FILE"; then
-    echo "✅ SUCCESS: The file $FILE WAS created."
-    ls -l "$FILE"
-    else
-    echo "❌ ERROR: The file $FILE WAS NOT found."
-    exit 1
-    fi
-    echo "--------------------------------------"
+      - name: Debug and Verify Full DS File Creation
+        run: |
+          FILE="Staff-Data-Scientist/resume.md"
+          echo "--- Verifying FULL DS output file creation ---"
+          if test -f "\$FILE"; then
+            echo "✅ SUCCESS: The file \$FILE WAS created."
+            ls -l "\$FILE"
+          else
+            echo "❌ ERROR: The file \$FILE WAS NOT found."
+            exit 1
+          fi
+          echo "--------------------------------------"
 
-    name: Convert TPM resume (Full) to PDF
-    run: pandoc TPM-AI-Compliance/resume.md -o TPM-AI-Compliance/resume.pdf
+      - name: Convert TPM resume (Full) to PDF
+        run: pandoc TPM-AI-Compliance/resume.md -o TPM-AI-Compliance/resume.pdf
 
-    name: Convert TPM Dice resume (Full) to PDF
-    run: pandoc TPM-AI-Compliance/Dice/resume.md -o TPM-AI-Compliance/Dice/resume.pdf
+      - name: Convert TPM Dice resume (Full) to PDF
+        run: pandoc TPM-AI-Compliance/Dice/resume.md -o TPM-AI-Compliance/Dice/resume.pdf
 
-    name: Convert DS resume (Full) to PDF
-    run: pandoc Staff-Data-Scientist/resume.md -o Staff-Data-Scientist/resume.pdf
+      - name: Convert DS resume (Full) to PDF
+        run: pandoc Staff-Data-Scientist/resume.md -o Staff-Data-Scientist/resume.pdf
 
-    --- NO-SUMMARY ASSEMBLY (assemble-no-summary.sh) ---
+      # --- NO-SUMMARY ASSEMBLY (assemble-no-summary.sh) ---
 
-    name: Make no-summary script executable
-    run: chmod +x assemble-no-summary.sh
+      - name: Make no-summary script executable
+        run: chmod +x assemble-no-summary.sh
 
-    name: Run no-summary assembly script
-    run: |
-    echo "Starting no-summary assembly script: ./assemble-no-summary.sh"
-    ./assemble-no-summary.sh
-    echo "No-summary assembly script execution finished."
+      - name: Run no-summary assembly script
+        run: |
+          echo "Starting no-summary assembly script: ./assemble-no-summary.sh"
+          ./assemble-no-summary.sh
+          echo "No-summary assembly script execution finished."
 
-    name: Debug and Verify No-Summary TPM File Creation
-    run: |
-    FILE="TPM-AI-Compliance/resume-no-summary.md"
-    echo "--- Verifying NO-SUMMARY TPM output file creation ---"
-    if test -f "$FILE"; then
-    echo "✅ SUCCESS: The file $FILE WAS created by the script."
-    ls -l "$FILE"
-    else
-    echo "❌ ERROR: The file $FILE WAS NOT found after the assembly script ran."
-    echo "The assembly script likely failed silently or exited early. Check input file paths for case-sensitivity!"
-    exit 1 # Fail the job here for clear visibility
-    fi
-    echo "--------------------------------------"
+      - name: Debug and Verify No-Summary TPM File Creation
+        run: |
+          FILE="TPM-AI-Compliance/resume-no-summary.md"
+          echo "--- Verifying NO-SUMMARY TPM output file creation ---"
+          if test -f "\$FILE"; then
+            echo "✅ SUCCESS: The file \$FILE WAS created by the script."
+            ls -l "\$FILE"
+          else
+            echo "❌ ERROR: The file \$FILE WAS NOT found after the assembly script ran."
+            echo "The assembly script likely failed silently or exited early. Check input file paths for case-sensitivity!"
+            exit 1 # Fail the job here for clear visibility
+          fi
+          echo "--------------------------------------"
 
-    name: Debug and Verify No-Summary Dice File Creation
-    run: |
-    FILE="TPM-AI-Compliance/Dice/resume-no-summary.md"
-    echo "--- Verifying NO-SUMMARY Dice output file creation ---"
-    if test -f "$FILE"; then
-    echo "✅ SUCCESS: The file $FILE WAS created by the script."
-    ls -l "$FILE"
-    else
-    echo "❌ ERROR: The file $FILE WAS NOT found after the assembly script ran."
-    echo "The assembly script likely failed silently or exited early. Check input file paths for case-sensitivity!"
-    exit 1 # Fail the job here for clear visibility
-    fi
-    echo "--------------------------------------"
+      - name: Debug and Verify No-Summary Dice File Creation
+        run: |
+          FILE="TPM-AI-Compliance/Dice/resume-no-summary.md"
+          echo "--- Verifying NO-SUMMARY Dice output file creation ---"
+          if test -f "\$FILE"; then
+            echo "✅ SUCCESS: The file \$FILE WAS created by the script."
+            ls -l "\$FILE"
+          else
+            echo "❌ ERROR: The file \$FILE WAS NOT found after the assembly script ran."
+            echo "The assembly script likely failed silently or exited early. Check input file paths for case-sensitivity!"
+            exit 1 # Fail the job here for clear visibility
+          fi
+          echo "--------------------------------------"
 
-    name: Debug and Verify No-Summary DS File Creation
-    run: |
-    FILE="Staff-Data-Scientist/resume-no-summary.md"
-    echo "--- Verifying NO-SUMMARY DS output file creation ---"
-    if test -f "$FILE"; then
-    echo "✅ SUCCESS: The file $FILE WAS created by the script."
-    ls -l "$FILE"
-    else
-    echo "❌ ERROR: The file $FILE WAS NOT found after the assembly script ran."
-    echo "The assembly script likely failed silently or exited early. Check input file paths for case-sensitivity!"
-    exit 1 # Fail the job here for clear visibility
-    fi
-    echo "--------------------------------------"
+      - name: Debug and Verify No-Summary DS File Creation
+        run: |
+          FILE="Staff-Data-Scientist/resume-no-summary.md"
+          echo "--- Verifying NO-SUMMARY DS output file creation ---"
+          if test -f "\$FILE"; then
+            echo "✅ SUCCESS: The file \$FILE WAS created by the script."
+            ls -l "\$FILE"
+          else
+            echo "❌ ERROR: The file \$FILE WAS NOT found after the assembly script ran."
+            echo "The assembly script likely failed silently or exited early. Check input file paths for case-sensitivity!"
+            exit 1 # Fail the job here for clear visibility
+          fi
+          echo "--------------------------------------"
 
-    name: Convert TPM resume (no summary) to PDF
-    run: pandoc TPM-AI-Compliance/resume-no-summary.md -o TPM-AI-Compliance/resume-no-summary.pdf
 
-    name: Convert TPM Dice resume (no summary) to PDF
-    run: pandoc TPM-AI-Compliance/Dice/resume-no-summary.md -o TPM-AI-Compliance/Dice/resume-no-summary.pdf
+      - name: Convert TPM resume (no summary) to PDF
+        run: pandoc TPM-AI-Compliance/resume-no-summary.md -o TPM-AI-Compliance/resume-no-summary.pdf
 
-    name: Convert DS resume (no summary) to PDF
-    run: pandoc Staff-Data-Scientist/resume-no-summary.md -o Staff-Data-Scientist/resume-no-summary.pdf
+      - name: Convert TPM Dice resume (no summary) to PDF
+        run: pandoc TPM-AI-Compliance/Dice/resume-no-summary.md -o TPM-AI-Compliance/Dice/resume-no-summary.pdf
 
-    name: Push changes
-    run: |
-    git config user.name "Bini Teklehaimanot"
-    git config user.email "padgenb@gmail.com"
-    git add TPM-AI-Compliance/resume.pdf TPM-AI-Compliance/resume-no-summary.pdf TPM-AI-Compliance/Dice/resume.pdf TPM-AI-Compliance/Dice/resume-no-summary.pdf Staff-Data-Scientist/resume.pdf Staff-Data-Scientist/resume-no-summary.pdf
-    git diff --cached --quiet || git commit -m "Rebuilt PDFs from existing Markdown"
-    git push
+      - name: Convert DS resume (no summary) to PDF
+        run: pandoc Staff-Data-Scientist/resume-no-summary.md -o Staff-Data-Scientist/resume-no-summary.pdf
+
+      - name: Push changes
+        run: |
+          git config user.name "Bini Teklehaimanot"
+          git config user.email "padgenb@gmail.com"
+          git add TPM-AI-Compliance/resume.pdf TPM-AI-Compliance/resume-no-summary.pdf TPM-AI-Compliance/Dice/resume.pdf TPM-AI-Compliance/Dice/resume-no-summary.pdf Staff-Data-Scientist/resume.pdf Staff-Data-Scientist/resume-no-summary.pdf
+          git diff --cached --quiet || git commit -m "Rebuilt PDFs from existing Markdown"
+          git push
