@@ -21,6 +21,19 @@ jobs:
             sudo apt-get update
             sudo apt-get install -y pandoc texlive-xetex
 
+        - name: Compute input checksum
+          run: |
+            find TPM-AI-Compliance/modules Staff-Data-Scientist/modules TPM-AI-Compliance/Dice/modules shared -name "*.md" | sort | xargs cat | sha256sum > input.checksum
+
+        - name: Check for input changes
+          run: |
+            if git diff --quiet input.checksum; then
+              echo "✅ Inputs unchanged — skipping assembly and PDF generation."
+              exit 0
+            else
+              echo "🔄 Inputs changed — proceeding with assembly."
+            fi
+
         # --- FULL ASSEMBLY (assemble.sh) ---
 
         - name: Make script executable (Full)
