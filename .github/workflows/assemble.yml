@@ -186,7 +186,7 @@ jobs:
               exit 0
             fi
 
-          # Commit and push
-          git commit -m "Rebuilt resumes from updated Markdown inputs and convert them to PDFs"
-          git pull --rebase origin main
-          git push
+            # Commit and push
+            git commit -m "Rebuilt resumes from updated Markdown inputs and convert them to PDFs"
+            git pull --rebase origin main
+            git push
