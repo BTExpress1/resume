@@ -21,12 +21,12 @@ jobs:
 
       - name: Convert to PDF
         run: |
-          pandoc TPM-AI-Compliance/resume.md -o TPM-AI-Compliance/resume.pdf
-          pandoc Staff-Data-Scientist/resume.md -o Staff-Data-Scientist/resume.pdf
-          pandoc TPM-AI-Compliance/resume-no-summary.md -o TPM-AI-Compliance/resume-no-summary.pdf
-          pandoc Staff-Data-Scientist/resume-no-summary.md -o Staff-Data-Scientist/resume-no-summary.pdf
-          pandoc TPM-AI-Compliance/Dice/resume.md -o TPM-AI-Compliance/Dice/resume.pdf       
-          pandoc TPM-AI-Compliance/Dice/resume-no-summary.md -o TPM-AI-Compliance/Dice/resume-no-summary.pdf
+          pandoc TPM-AI-Compliance/resume.md -o TPM-AI-Compliance/resume.pdf --pdf-engine=xelatex -V colorlinks=true -V urlcolor=blue
+          pandoc Staff-Data-Scientist/resume.md -o Staff-Data-Scientist/resume.pdf --pdf-engine=xelatex -V colorlinks=true -V urlcolor=blue
+          pandoc TPM-AI-Compliance/resume-no-summary.md -o TPM-AI-Compliance/resume-no-summary.pdf --pdf-engine=xelatex -V colorlinks=true -V urlcolor=blue
+          pandoc Staff-Data-Scientist/resume-no-summary.md -o Staff-Data-Scientist/resume-no-summary.pdf --pdf-engine=xelatex -V colorlinks=true -V urlcolor=blue
+          pandoc TPM-AI-Compliance/Dice/resume.md -o TPM-AI-Compliance/Dice/resume.pdf --pdf-engine=xelatex -V colorlinks=true -V urlcolor=blue       
+          pandoc TPM-AI-Compliance/Dice/resume-no-summary.md -o TPM-AI-Compliance/Dice/resume-no-summary.pdf --pdf-engine=xelatex -V colorlinks=true -V urlcolor=blue
 
       - name: Push changes
         run: |

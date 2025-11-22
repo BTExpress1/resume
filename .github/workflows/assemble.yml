@@ -101,12 +101,12 @@ jobs:
             fi
             echo "--------------------------------------"
         - name: Convert TPM resume (Full) to PDF
-          run: pandoc TPM-AI-Compliance/resume.md -o TPM-AI-Compliance/resume.pdf
+          run: pandoc TPM-AI-Compliance/resume.md -o TPM-AI-Compliance/resume.pdf --pdf-engine=xelatex -V colorlinks=true -V urlcolor=blue
         - name: Convert TPM Dice resume (Full) to PDF
-          run: pandoc TPM-AI-Compliance/Dice/resume.md -o TPM-AI-Compliance/Dice/resume.pdf
+          run: pandoc TPM-AI-Compliance/Dice/resume.md -o TPM-AI-Compliance/Dice/resume.pdf --pdf-engine=xelatex -V colorlinks=true -V urlcolor=blue
 
         - name: Convert DS resume (Full) to PDF
-          run: pandoc Staff-Data-Scientist/resume.md -o Staff-Data-Scientist/resume.pdf
+          run: pandoc Staff-Data-Scientist/resume.md -o Staff-Data-Scientist/resume.pdf --pdf-engine=xelatex -V colorlinks=true -V urlcolor=blue
 
           # --- NO-SUMMARY ASSEMBLY (assemble-no-summary.sh) ---
 
@@ -168,12 +168,12 @@ jobs:
 
 
         - name: Convert TPM resume (no summary) to PDF
-          run: pandoc TPM-AI-Compliance/resume-no-summary.md -o TPM-AI-Compliance/resume-no-summary.pdf
+          run: pandoc TPM-AI-Compliance/resume-no-summary.md -o TPM-AI-Compliance/resume-no-summary.pdf --pdf-engine=xelatex -V colorlinks=true -V urlcolor=blue
         - name: Convert TPM Dice resume (no summary) to PDF
-          run: pandoc TPM-AI-Compliance/Dice/resume-no-summary.md -o TPM-AI-Compliance/Dice/resume-no-summary.pdf
+          run: pandoc TPM-AI-Compliance/Dice/resume-no-summary.md -o TPM-AI-Compliance/Dice/resume-no-summary.pdf --pdf-engine=xelatex -V colorlinks=true -V urlcolor=blue
 
         - name: Convert DS resume (no summary) to PDF
-          run: pandoc Staff-Data-Scientist/resume-no-summary.md -o Staff-Data-Scientist/resume-no-summary.pdf
+          run: pandoc Staff-Data-Scientist/resume-no-summary.md -o Staff-Data-Scientist/resume-no-summary.pdf --pdf-engine=xelatex -V colorlinks=true -V urlcolor=blue
 
         - name: Push changes
           run: |
